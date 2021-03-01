@@ -1,27 +1,31 @@
 <template>
   <div>
-      <div v-for="user in users" key="">{{user.title}}</div>
+    <p v-for="item in this.$store.state.news" v-bind:key="item.title">
+      <a v-bind:href="item.url">
+        {{ item.title }}
+      </a>
+    </p>
   </div>
 </template>
 
 <script>
-import { getNewsContentList } from "../api/index.js"
 export default {
-    data() {
-        return {
-            users: [],
-        }
-    },
-    created () {
-        getNewsContentList()
-        .then(response => this.user = response.data)
-        .catch(err => {
-            console.log(err)
-        })
-    }
-}
+  //   data() {
+  //     return {
+  //       users: [],
+  //     };
+  //   },
+  created() {
+    this.$store.dispatch("GET_NEWS");
+    // let vm = this;
+    // getNewsContentList()
+    //   .then((response) => (vm.users = response.data))
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  },
+};
 </script>
 
 <style>
-
 </style>
