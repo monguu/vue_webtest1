@@ -1,22 +1,28 @@
 <template>
   <div>
-     <p>ID: {{ getUserInfo.id }}</p>
-     <p>Karma: {{ getUserInfo.karma }}</p>
-      <p>Created: {{ getUserInfo.created }}</p>
+    <user-page v-on:info="getUserInfo"></user-page>
+    <!-- <p>ID: {{ getUserInfo.id }}</p>
+    <p>Karma: {{ getUserInfo.karma }}</p>
+    <p>Created: {{ getUserInfo.created }}</p> -->
   </div>
 </template>
 
 <script>
-export default { 
+import UserPage from "../components/UserPage.vue"
+export default {
+  
+  components: {
+    UserPage
+  },
   computed: {
     getUserInfo() {
        return this.$store.state.user
     }
   },
   created() {
-  const userPage = this.$route.params.id;
-  console.log(this.$route)
-  this.$store.dispatch("GET_USER", userPage)
+  const usertext = this.$route.params.id;
+  // console.log(this.$route)
+  this.$store.dispatch("GET_USER", usertext)
   }
 }
 </script>
