@@ -1,6 +1,6 @@
 <template>
   <div>
-    <user-page v-on:info="getUserInfo"></user-page>
+    <user-page v-on:userInfo="getUserInfo"></user-page>
     <!-- <p>ID: {{ getUserInfo.id }}</p>
     <p>Karma: {{ getUserInfo.karma }}</p>
     <p>Created: {{ getUserInfo.created }}</p> -->
