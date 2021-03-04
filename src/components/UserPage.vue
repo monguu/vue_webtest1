@@ -5,73 +5,69 @@
         <div>
           <i class="far fa-user-circle usericon"></i>
         </div>
-          <div class="usertext">
-            <h3 class="username">
-              <!-- <router-link v-bind:to="`/user/${getedAsk.user}`">
-                {{ getedAsk.user }}
-              </router-link> -->
-              {{ userInfo.id }}
-            </h3>
-            <div class="time">
-            {{ userInfo.created }}
-            </div>
+        <div class="usertext">
+          <h3 class="username">
+            <slot name="username"></slot>
+          </h3>
+          <div class="time">
+            <slot name="usertime"></slot>
           </div>
+          <div class="karma">
+            <slot name="userkarma"></slot>
+          </div>
+        </div>
       </div>
     </section>
-      <section>
-        <!-- <div>
+    <section>
+      <!-- <div>
           <h1>{{ getUserInfo.id }}</h1>
         </div>
         <div v-html="getUserInfo.created">
           {{ getedAsk.content }}
         </div> -->
+      <!-- <router-link v-bind:to="`/user/${getedAsk.user}`">
+                {{ getedAsk.user }}
+              </router-link> -->
     </section>
-       
   </div>
 </template>
 
 <script>
 export default {
-    props: {
-        userInfo: Object,
-    },
-  computed: {
-    // getedAsk() {
-    //   return this.$store.state.ask
-    // },   
-    // getUserInfo() {
-    //    return this.$store.state.user
-    // }
-  
+  props: {
+    info: Object,
   },
-  created () {
-    const askPage = this.$route.params.id;
-    this.$store.dispatch("GET_ASKPAGE", askPage)
-  }
-}
+};
 </script>
 
 <style scoped>
 .usertitle {
   display: flex;
-  text-align: center;
   line-height: 200%;
-  border: 3px solid rgb(12, 175, 148)
+  border: 3px solid rgb(12, 175, 148);
 }
 .usericon {
   font-size: 80px;
   padding: 10px;
-  margin-top: 5px; 
-  
+  margin-top: 5px;
 }
 .usertext {
-  line-height: 80%;
+  line-height: 50%;
   margin-left: 10px;
 }
 .time {
-  font-size: 15px
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  color: rgb(10, 156, 161);
 }
 .username {
-  font-size: 30px;
+  font-size: 20px;
+  line-height: 110%;
+  color: rgb(24, 77, 138);
+}
+.karma {
+  font-weight: bold;
+  color: rgb(221, 33, 80);
 }
 </style>

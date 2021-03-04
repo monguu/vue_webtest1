@@ -1,13 +1,9 @@
 <template>
   <div>
     <ul class="contentlist">
-      <li
-        v-for="item in listitems"
-        v-bind:key="item.title"
-        class="contentpost"
-      >
+      <li v-for="item in listitems" v-bind:key="item.title" class="contentpost">
         <div class="points">
-          {{ item.points || 0}}
+          {{ item.points || 0 }}
         </div>
         <!--  -->
         <div class="contenttotal">
@@ -17,23 +13,25 @@
                 {{ item.title }}
               </a>
             </template>
-              <!--  -->
+            <!--  -->
             <template v-else>
               <router-link v-bind:to="`/item/${item.id}`">
                 {{ item.title }}
               </router-link>
             </template>
-              <!--  -->
+            <!--  -->
           </div>
           <small class="itemtext">
             {{ item.time_ago }} by
-              <router-link 
-                v-if="item.user"
-                v-bind:to="`/user/${item.user}`" class="usertext">
-               {{ item.user }}
-              </router-link>
+            <router-link
+              v-if="item.user"
+              v-bind:to="`/user/${item.user}`"
+              class="usertext"
+            >
+              {{ item.user }}
+            </router-link>
             <a :href="item.url" v-else>
-                {{ item.domain }}
+              {{ item.domain }}
             </a>
           </small>
         </div>
@@ -44,37 +42,21 @@
 
 <script>
 export default {
-  //  computed: {
-  //  listitem() {
-     
-  //  }
-  //   },
-  created() {
-    const routernName = this.$route.name;
-    const listPage = this.$store.dispatch;
-    if (routernName === "news") {
-      listPage("GET_NEWS");
-    } else if (routernName === "ask") {
-      listPage("GET_ASK");
-    } else if (routernName === "jobs") {
-      listPage("GET_JOBS");
-    }
-    // console.log("err")
-  },
   computed: {
-  listitems() {
-    const Name = this.$route.name;
+    listitems() {
+      const Name = this.$route.name;
       // console.log("err2")
       if (Name === "news") {
-        return this.$store.state.news
-      } else if(Name === "ask") {
-        return this.$store.state.ask
-      } else (Name === "jobs"); {
-        return this.$store.state.jobs
+        return this.$store.state.news;
+      } else if (Name === "ask") {
+        return this.$store.state.ask;
+      } else Name === "jobs";
+      {
+        return this.$store.state.jobs;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>

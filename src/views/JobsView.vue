@@ -1,5 +1,5 @@
 <template>
-<list-item></list-item>
+  <list-item></list-item>
   <!-- <div>
     <ul class="jobslist">
       <li
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ListItem from '../components/listitem.vue';
+import ListItem from "../components/listitem.vue";
 export default {
   components: { ListItem },
   // data() {
@@ -32,18 +32,11 @@ export default {
   //     jobs: [],
   //   };
   // },
-  // created() {
-  //   this.$store.dispatch("GET_JOBS");
-    // let vm = this;
-    // getJobsList()
-    //   .then((response) => (vm.job = response.data))
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-  }
-
+  created() {
+    this.$store.dispatch("GET_JOBS");
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

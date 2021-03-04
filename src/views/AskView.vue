@@ -31,7 +31,9 @@ export default {
   components: {
     ListItem,
   },
-
+  created() {
+    this.$store.dispatch("GET_ASK");
+  },
   // computed: {
   //   ...mapGetters({
   //     getedAsk: "getAsk",
@@ -44,5 +46,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
