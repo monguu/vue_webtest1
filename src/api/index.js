@@ -18,5 +18,16 @@ function getUserPage(userPage) {
 function getAskPage(AskPage) {
   return axios.get(`${config.baseUrl}/item/${AskPage}.json`);
 }
+// getNewsContentList, getAskList, getJobsList 통합 API
+function getLIst(pageName) {
+  return axios.get(`${config.baseUrl}/${pageName}/1.json`);
+}
 
-export { getNewsContentList, getAskList, getJobsList, getUserPage, getAskPage };
+export {
+  getNewsContentList,
+  getAskList,
+  getJobsList,
+  getUserPage,
+  getAskPage,
+  getLIst,
+};

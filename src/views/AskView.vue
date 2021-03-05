@@ -25,15 +25,27 @@
 </template>
 
 <script>
+
 import ListItem from "../components/listitem.vue";
 // import { mapGetters } from "vuex";
 export default {
   components: {
     ListItem,
   },
-  created() {
-    this.$store.dispatch("GET_ASK");
-  },
+  // created() {
+  //   Bus.$emit("start:spinner");
+  //   setTimeout(() => {
+  //       this.$store.dispatch("GET_ASK")
+  //     .then(() => {
+  //     Bus.$emit("end:spinner");
+  //     console.log("spinner test");
+  //   })
+  //   .catch(() => {
+  //     console.log("err")
+  //   })
+  //   },2000)
+   
+  // },
   // computed: {
   //   ...mapGetters({
   //     getedAsk: "getAsk",

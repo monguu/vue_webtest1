@@ -43,18 +43,20 @@
 <script>
 export default {
   computed: {
+   
     listitems() {
-      const Name = this.$route.name;
-      // console.log("err2")
-      if (Name === "news") {
-        return this.$store.state.news;
-      } else if (Name === "ask") {
-        return this.$store.state.ask;
-      } else Name === "jobs";
-      {
-        return this.$store.state.jobs;
-      }
-    },
+      return this.$store.state.list;
+      // const Name = this.$route.name;
+      // // console.log("err2")
+      // if (Name === "news") {
+      //   return this.$store.state.news;
+      // } else if (Name === "ask") {
+      //   return this.$store.state.ask;
+      // } else Name === "jobs";
+      // {
+      //   return this.$store.state.jobs;
+      // }
+    }
   },
 };
 </script>

@@ -15,4 +15,7 @@ export default {
   SET_ASKPAGE(state, ask) {
     state.ask = ask;
   },
+  SET_LIST(state, list) {
+    state.list = list;
+  },
 };

@@ -24,6 +24,7 @@
 </template>
 
 <script>
+
 import ListItem from "../components/listitem.vue";
 export default {
   components: { ListItem },
@@ -31,10 +32,19 @@ export default {
   //   return {
   //     jobs: [],
   //   };
+  // created() {
+  //   Bus.$emit("start:spinner");
+  //   setTimeout(() => {
+  //       this.$store.dispatch("GET_JOBS")
+  //     .then(() => {
+  //     Bus.$emit("end:spinner");
+  //     console.log("spinner test");
+  //   })
+  //   .catch(() => {
+  //     console.log("err")
+  //   })
+  //   },2000)
   // },
-  created() {
-    this.$store.dispatch("GET_JOBS");
-  },
 };
 </script>
 

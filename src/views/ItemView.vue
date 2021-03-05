@@ -8,7 +8,6 @@
         <div slot="usertime">POST : {{ getedAsk.time_ago }}</div>
       </user-info>
       <!-- <div class="usertitle">
-        
         <div class="usertext">
           <h3 class="username">
             <router-link v-bind:to="`/user/${getedAsk.user}`">

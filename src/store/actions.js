@@ -4,20 +4,22 @@ import {
   getAskList,
   getUserPage,
   getAskPage,
+  getLIst,
 } from "../api/index.js";
 export default {
   GET_NEWS(context) {
-    getNewsContentList(context)
+    return getNewsContentList()
       .then((response) => {
-        console.log(response);
         context.commit("SET_NEWS", response.data);
+        // 받아온 데이터를 다시 news에 리턴 해줌,
+        return response;
       })
       .catch((err) => {
         console.log(err);
       });
   },
   GET_ASK(context) {
-    getAskList(context)
+    return getAskList()
       .then((response) => {
         context.commit("SET_ASK", response.data);
       })
@@ -26,7 +28,7 @@ export default {
       });
   },
   GET_JOBS() {
-    getJobsList()
+    return getJobsList()
       .then((response) => {
         this.commit("SET_JOBS", response.data);
       })
@@ -35,7 +37,7 @@ export default {
       });
   },
   GET_USER({ commit }, userPage) {
-    getUserPage(userPage)
+    return getUserPage(userPage)
       .then(({ data }) => {
         commit("SET_USER", data);
       })
@@ -44,9 +46,19 @@ export default {
       });
   },
   GET_ASKPAGE({ commit }, askPage) {
-    getAskPage(askPage)
+    return getAskPage(askPage)
       .then(({ data }) => {
         commit("SET_ASKPAGE", data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+  GET_LIST({ commit }, pageName) {
+    return getLIst(pageName)
+      .then((response) => {
+        console.log(1);
+        commit("SET_LIST", response.data);
       })
       .catch((err) => {
         console.log(err);
