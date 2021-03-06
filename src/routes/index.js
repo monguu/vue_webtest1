@@ -27,9 +27,9 @@ export const router = new VueRouter({
           store
             .dispatch("GET_LIST", to.name)
             .then(() => {
-              console.log(2);
-              Bus.$emit("end:spinner");
-              console.log("spinner test");
+              // console.log(2);
+              // Bus.$emit("end:spinner");
+              // console.log("spinner test");
               next();
             })
             .catch(() => {
@@ -52,7 +52,7 @@ export const router = new VueRouter({
             .dispatch("GET_LIST", to.name)
             .then(() => {
               console.log(2);
-              Bus.$emit("end:spinner");
+              // Bus.$emit("end:spinner");
               console.log("spinner test");
               next();
             })
@@ -72,7 +72,7 @@ export const router = new VueRouter({
           store
             .dispatch("GET_LIST", to.name)
             .then(() => {
-              Bus.$emit("end:spinner");
+              // Bus.$emit("end:spinner");
               console.log("spinner test");
               next();
             })

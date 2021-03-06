@@ -25,13 +25,14 @@
 </template>
 
 <script>
-
 import ListItem from "../components/listitem.vue";
+import DataGetListMixin from "../mixins/DataGetList.js";
 // import { mapGetters } from "vuex";
 export default {
   components: {
     ListItem,
   },
+  mixins: [DataGetListMixin],
   // created() {
   //   Bus.$emit("start:spinner");
   //   setTimeout(() => {
@@ -44,7 +45,7 @@ export default {
   //     console.log("err")
   //   })
   //   },2000)
-   
+
   // },
   // computed: {
   //   ...mapGetters({

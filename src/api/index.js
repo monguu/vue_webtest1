@@ -19,7 +19,7 @@ function getAskPage(AskPage) {
   return axios.get(`${config.baseUrl}/item/${AskPage}.json`);
 }
 // getNewsContentList, getAskList, getJobsList 통합 API
-function getLIst(pageName) {
+function getList(pageName) {
   return axios.get(`${config.baseUrl}/${pageName}/1.json`);
 }
 
@@ -29,5 +29,5 @@ export {
   getJobsList,
   getUserPage,
   getAskPage,
-  getLIst,
+  getList,
 };

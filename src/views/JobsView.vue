@@ -24,10 +24,12 @@
 </template>
 
 <script>
-
 import ListItem from "../components/listitem.vue";
+import DataGetListMixin from "../mixins/DataGetList.js";
 export default {
   components: { ListItem },
+  mixins: [DataGetListMixin],
+
   // data() {
   //   return {
   //     jobs: [],
