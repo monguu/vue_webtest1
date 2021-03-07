@@ -13,7 +13,6 @@
                 {{ item.title }}
               </a>
             </template>
-            <!--  -->
             <template v-else>
               <router-link v-bind:to="`/item/${item.id}`">
                 {{ item.title }}
