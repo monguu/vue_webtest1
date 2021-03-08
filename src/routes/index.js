@@ -25,7 +25,7 @@ export const router = new VueRouter({
         Bus.$emit("start:spinner");
         setTimeout(() => {
           store
-            .dispatch("GET_LIST", to.name)
+            .dispatch("GET_LIST", to.name, from.name)
             .then(() => {
               // console.log(2);
               // Bus.$emit("end:spinner");

@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="rogo">MONG NEWS</div>
+    <div class="rogo"><a href="/">MONG NEWS</a></div>
     <div class="headerContent">
       <router-link to="news">News</router-link> |
       <router-link to="jobs">Jobs</router-link> |
